@@ -1,0 +1,119 @@
+AWS S3  
+    
+1.ASSUME_ROLE
+    {
+    "type": "ASSUME_ROLE",
+    "arn": "arn:aws:iam::123456789012:role/S3AccessRole"
+    }
+
+2.CONSUMER_ROLE
+    {
+    "type": "CONSUMER_ROLE",
+    "arn": "arn:aws:iam::123456789012:role/ConsumerRole",
+    "consumerArn": "arn:aws:iam::987654321098:role/EndUserConsumerRole"
+    }
+
+3.ACCESS_KEY
+    {
+    "type": "ACCESS_KEY",
+    "accessKey": "AKIAEXAMPLEKEY123",
+    "secretAccessKey": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    }
+
+
+GCP GCS
+
+1. EXTERNAL_ACCESS
+    {
+    "type": "EXTERNAL_ACCESS"
+    }
+
+2.IMPERSONATION
+    {
+    "type": "IMPERSONATION",
+    "serviceAccountToImpersonate": "service-account@example-project.iam.gserviceaccount.com"
+    }
+
+Azure Blob Storage
+
+{
+  "accessIdentifiers": {
+    "consumerManagedApplications": [
+      {
+        "applicationId": "11111111-2222-3333-4444-555555555555"
+      },
+      {
+        "applicationId": "66666666-7777-8888-9999-000000000000"
+      }
+    ]
+  }
+}
+
+
+
+GCP BigQuery
+{
+  "accessIdentifiers": [
+    {
+      "grantedEmail": "user1@example.com",
+      "principalType": "user"
+    },
+    {
+      "grantedEmail": "group@example.com",
+      "principalType": "group"
+    },
+    {
+      "grantedEmail": "service-account@example-project.iam.gserviceaccount.com",
+      "principalType": "serviceAccount"
+    }
+  ]
+}
+
+
+Snowflake (AWS, GCP, Azure)
+{
+  "accessIdentifiers": [
+    {
+      "organizationName": "exampleOrg",
+      "accountName": "exampleAccount"
+    }
+  ]
+}
+
+
+Databricks (AWS, GCP, Azure)
+{
+  "accessIdentifiers": [
+    {
+      "metastoreId": "metastore-12345"
+    }
+  ]
+}
+
+
+Amazon Redshift (AWS)
+{
+  "accounts": [
+    {
+      "accountId": "123456789012"
+    },
+    {
+      "accountId": "987654321098"
+    }
+  ]
+}
+
+
+SFTP (AWS)
+{
+  "accessIdentifiers": [
+    {
+      "label": "user1",
+      "publicKey": "ssh-rsa AAAAB3Nza...exampleKey user1@example.com"
+    },
+    {
+      "label": "user2",
+      "publicKey": "ssh-rsa AAAAB3Nza...exampleKey user2@example.com"
+    }
+  ]
+}
